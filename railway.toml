@@ -1,6 +1,9 @@
 [build]
-  image = "ghcr.io/black-forest-labs/flux-klein:latest"
+  image = "public.ecr.aws/flux-klein:latest"
 
 [services]
   [[services.ports]]
     port = 8000
+
+[deploy]
+  startCommand = "python -m flux.server --host 0.0.0.0 --port $PORT"
