@@ -8,4 +8,4 @@ RUN pip install torch torchvision --index-url https://download.pytorch.org/whl/c
     pip install -e /app[all]
 
 EXPOSE 8000
-CMD ["python", "-m", "flux.api.server", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["python", "-m", "flux.api.server", "--host", "0.0.0.0", "--port", "8000", "--model", "flux-klein"]
