@@ -1,9 +1,9 @@
 [build]
-  image = "public.ecr.aws/flux-klein:latest"
-
-[services]
-  [[services.ports]]
-    port = 8000
+  dockerfilePath = "./Dockerfile"
 
 [deploy]
-  startCommand = "python -m flux.server --host 0.0.0.0 --port $PORT"
+  startCommand = "python -m flux_klein.server --host 0.0.0.0 --port $PORT"
+
+[services]
+  internalPort = 8000
+  primaryRegion = "eu-west"
