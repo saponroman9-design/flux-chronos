@@ -1,9 +1,6 @@
 [build]
-  dockerfilePath = "./Dockerfile"
-
-[deploy]
-  startCommand = "python -m flux_klein.server --host 0.0.0.0 --port $PORT"
+  image = "ghcr.io/black-forest-labs/flux-klein:latest"
 
 [services]
-  internalPort = 8000
-  primaryRegion = "eu-west"
+  [[services.ports]]
+    port = 8000
