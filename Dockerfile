@@ -1,3 +1,3 @@
-FROM public.ecr.aws/flux-klein:latest
-EXPOSE 8000
-CMD ["python", "-m", "flux_klein.server", "--host", "0.0.0.0", "--port", "8000"]
+FROM python:3.12-slim
+RUN pip install flux-klein[api]
+CMD ["python", "-m", "flux.server", "--host", "0.0.0.0", "--port", "8000"]
